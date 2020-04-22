@@ -5,18 +5,20 @@ import javax.swing.JTable;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.File;
+import java.io.FileReader;
 
 @SuppressWarnings("serial")
 
 public class Window extends JPanel {
 	
 	public Window() {
+		
         super(new GridLayout(1,0));
-
         String[] columnNames = {"First Name",
                                 "Last Name",
                                 "Birthday"}; 
-         
+        
         String[][] data = {
         {"Dimitris", "Kepesidis", "22/4/1998"},
         {"Vassilis", "Chavales", "27/2/1997"},
