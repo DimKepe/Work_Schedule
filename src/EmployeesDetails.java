@@ -16,12 +16,14 @@ public class EmployeesDetails {
 		EmployeeDetails.put("LastName", "Papadopoylos");
 		EmployeeDetails.put("Name", "Giannis");
 		EmployeeDetails.put("DateOfBirth", "20-05-1986");
+		EmployeeDetails.put("Job description ","Security");
 
 		JSONObject EmployeeDetails2 = new JSONObject();
 		EmployeeDetails2.put("ID", "2");
 		EmployeeDetails2.put("LastName", "Papadopoylos");
 		EmployeeDetails2.put("Name", "Nikos");
 		EmployeeDetails2.put("DateOfBirth", "19-03-1997");
+		EmployeeDetails.put("Job description ","Logistis");
 
 		JSONArray Employees = new JSONArray();
 		Employees.add(EmployeeDetails);
