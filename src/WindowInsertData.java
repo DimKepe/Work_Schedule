@@ -95,7 +95,7 @@ public class WindowInsertData {
 		frame.getContentPane().add(comboBox);
 		
 		
-		JButton btnSubmit = new JButton("Submit");
+		JButton btnSubmit = new JButton("submit");
 		
 		btnSubmit.setBounds(65, 150, 89, 23);
 		frame.getContentPane().add(btnSubmit);
