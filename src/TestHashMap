@@ -1,0 +1,57 @@
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+ 
+public class Test2 {
+ 
+    public static void main(String a[]){
+        HashMap<String, String> EmployeesNames = new HashMap<String, String>();
+        //add key-value pair to hashmap
+        EmployeesNames.put("Employee ID 1", "Papadopoylos Giannis");
+        EmployeesNames.put("Employee ID 2", "Karamanolis Axilleas");
+        EmployeesNames.put("Employee ID 3","Xardalias Aristidis ");
+        EmployeesNames.put("Employee ID 3","Papadakis Dimitris ");
+        
+        System.out.println(EmployeesNames);
+        
+        
+        //getting value for the given key from hashmap
+        System.out.println("Value of second: "+EmployeesNames.get("Employee ID 2"));
+        System.out.println("Is HashMap empty? "+EmployeesNames.isEmpty());
+    
+        
+        System.out.println(EmployeesNames);
+        System.out.println("Size of the HashMap: "+EmployeesNames.size());
+    
+    
+    if(EmployeesNames.containsKey("Employee ID 1")){
+        System.out.println("The hashmap contains key Employee ID 1");
+    } else {
+        System.out.println("The hashmap does not contains key Employee ID 1");
+    }
+    if(EmployeesNames.containsKey("Employee ID 5")){
+        System.out.println("The hashmap contains key fifth");
+    } else {
+        System.out.println("The hashmap does not contains key Employee ID 5");
+    }
+
+    
+    if(EmployeesNames.containsValue("Employee ID 2")){
+        System.out.println("The hashmap contains value Employee ID 2");
+    } else {
+        System.out.println("The hashmap does not contains value Employee ID 2");
+    }
+    if(EmployeesNames.containsValue("Employee ID 10")){
+        System.out.println("The hashmap contains value first");
+    } else {
+        System.out.println("The hashmap does not contains value Employee ID 10");
+    }
+    
+    Set<Entry<String, String>> entires = EmployeesNames.entrySet();
+    for(Entry<String,String> ent:entires){
+        System.out.println(ent.getKey()+" ==> "+ent.getValue());
+    } 
+}
+    
+}
