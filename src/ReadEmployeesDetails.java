@@ -21,25 +21,25 @@ public class ReadEmployeesDetails {
 			JSONObject EmployeesDetails = (JSONObject)jsonObj.get("EmployeesDetails");
 			System.out.println("EmployeesDetails"+EmployeesDetails.toJSONString());
 			
-			for (int i = 0; i < 2; i++) {
-				
-				String EmployeeID = (String)EmployeesDetails.get("ID");
-				System.out.println("ID:"+EmployeeID);
-				
-				String EmployeeName = (String)EmployeesDetails.get("Name");
-				System.out.println("EmployeeName :"+EmployeeName);	
-				
-				String EmployeeLastName = (String)EmployeesDetails.get("LastName");
-				System.out.println("EmployeeLastName :"+EmployeeLastName);	
-				
-				String EmployeeBday = (String)EmployeesDetails.get("DateOfBirth");
-				System.out.println("Day of Birth :"+EmployeeBday);
-				
-				
-				String EmployeeJobDescription = (String)EmployeesDetails.get("JobDescription");
-				System.out.println("JobDescription:"+EmployeeJobDescription);
-				
-			}
+//			for (int i = 0; i < 2; i++) {
+//				
+//				String EmployeeID = (String)EmployeesDetails.get("ID");
+//				System.out.println("ID:"+EmployeeID);
+//				
+//				String EmployeeName = (String)EmployeesDetails.get("Name");
+//				System.out.println("EmployeeName :"+EmployeeName);	
+//				
+//				String EmployeeLastName = (String)EmployeesDetails.get("LastName");
+//				System.out.println("EmployeeLastName :"+EmployeeLastName);	
+//				
+//				String EmployeeBday = (String)EmployeesDetails.get("DateOfBirth");
+//				System.out.println("Day of Birth :"+EmployeeBday);
+//				
+//				
+//				String EmployeeJobDescription = (String)EmployeesDetails.get("JobDescription");
+//				System.out.println("JobDescription:"+EmployeeJobDescription);
+//				
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
