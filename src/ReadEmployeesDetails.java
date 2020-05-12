@@ -10,7 +10,7 @@ import org.json.simple.parser.JSONParser;
 public class ReadEmployeesDetails {
 	public static void main(String[] args) {
 		ClassLoader classLoader = new ReadEmployersDetails().getClass().getClassLoader();
-		String fileName = "com/tpg/json/EmployeesDetails.json";
+		String fileName = "EmployeesDetails.json";
 		File file = new File(classLoader.getResource(fileName).getFile());
 
 		JSONParser parser = new JSONParser();
