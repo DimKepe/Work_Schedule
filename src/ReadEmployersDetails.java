@@ -12,7 +12,7 @@ public class ReadEmployersDetails {
 
 	public static void main(String[] args) {
 		ClassLoader classLoader = new ReadEmployersDetails().getClass().getClassLoader();
-		String fileName = "com/tpg/json/EmployersDetails.json";
+		String fileName = "EmployersDetails.json";
 		File file = new File(classLoader.getResource(fileName).getFile());
 
 		JSONParser parser = new JSONParser();
