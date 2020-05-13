@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
 
 @SuppressWarnings("unchecked")
 
-public class ÅmployersDetails {
+public class Î•mployersDetails {
 
 	public static void main(String[] args) {
 		JSONObject Employer1 = new JSONObject();
