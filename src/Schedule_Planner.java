@@ -1,7 +1,8 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.lang.Math;
 
 public class Schedule_Planner {
@@ -33,7 +34,7 @@ public class Schedule_Planner {
 		workers.put(14, "Morty");
 		workers.put(15, "Rick");
 		workers.put(16, "Herbi");
-		workers.put(17, "Harry Potter");
+		workers.put(17, "Harry");
 		workers.put(18, "Snape");
 		workers.put(19, "Gandalf");
 	}
@@ -42,82 +43,87 @@ public class Schedule_Planner {
 	public static void main(String[] args) {
 		
 		workersfill();
+		
+		
 		HashMap<Integer, String> workclone = workers;
 		
 		int num_shifts = 3,
 			num_days = 7,
-			max = workers.size();
+			num_weeks,	
+			day_shift,
+			noon_shift,
+			night_shift,
+			num_workers = workers.size();
 		int w = 0, i, j;
-		boolean firsttime = true;
-		Object[][] working = new Object[num_days][num_shifts];
-/*
-		for (i = 0; i < workers.size(); i++) {
-			System.out.println(workers.get(i));
-		}	
+		String worker;
 		
-*/
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Gia poses evdomades theleis na einai to programma");
+		System.out.print("\f");
+		num_weeks = sc.nextInt();
+		num_days = num_days*num_weeks;
+		
+		System.out.println("Posoi ergazomenoi theleis na douleyoun stin prwini vardia?");
+		System.out.print("\f");
+		day_shift = sc.nextInt();
+		
+		System.out.println("Posoi ergazomenoi theleis na douleyoun stin mesimerianh vardia?");
+		System.out.print("\f");
+		noon_shift = sc.nextInt();
+		
+		System.out.println("Posoi ergazomenoi theleis na douleyoun stin vradinh vardia?");
+		System.out.print("\f");
+		night_shift = sc.nextInt();
+		
+		Object[][] working = new Object[num_days][num_shifts];
+		
+		ArrayList<String> working_day = new ArrayList<String>();
+		ArrayList<String> working_noon = new ArrayList<String>();
+		ArrayList<String> working_night = new ArrayList<String>();
+		
 
 		for (d = 0; d < num_days; d++) {
-			workclone = (HashMap<Integer, String>) workers.clone();
-			for (s = 0; s < num_shifts; s++) {
-				working[d][s] = workclone.get(w);
-				workclone.remove(w);
-				w++;
-				if(w == workclone.size())  w = 0;
-			}
-		}
-		w = 0;
-		
-		for (d = 0; d < num_days; d++) {
-			workclone = (HashMap<Integer, String>) workers.clone();
-			for (s = 0; s < num_shifts; s++) {
-				working[d][s] += "," + workclone.get(w);
-				workclone.remove(w);
-				w++;
-				if(w == workclone.size())  w = 0;
-			}
-		}		
-		
-		for (d = 0; d < num_days; d++) {
 			workclone = (HashMap<Integer,String>) workers.clone();
-			for (s = 0; s < num_shifts; s++) {
-				if (s == 2) {
-					for (i = 0; i < 1; i++) {
+			for (s = 0; s < num_shifts; s++) {				
+				if (s == 0 && day_shift > 1) {
+					for (i = 0; i < day_shift; i++) {
 						working[d][s] += "," + workclone.get(w);
 						workclone.remove(w);
 						w++;
 						if(w == workclone.size())  w=0;
 					}
-				} else if (s == 1) {
-					for (i = 0; i < 2; i++) {
+				//	working[d][s] = working_day;
+				} else if (s == 1 && noon_shift > 1) {
+					for (i = 0; i < noon_shift; i++) {
 						working[d][s] += "," + workclone.get(w);
 						workclone.remove(w);
 						w++;
 						if(w == workclone.size())  w=0;
 					}
-				} else {
-					for (i = 0; i < 4; i++) {
+				} else if (s == 2 && night_shift > 1) {
+					for (i = 0; i < night_shift; i++) {
 						working[d][s] += "," + workclone.get(w);
 						workclone.remove(w);
 						w++;
-						if(w == workclone.size())  w=0;
+						if(w == workclone.size())  w=0;		
 					}
 				}
 			}
-
+	
 		}
 			
 	    for ( d = 0; d < working.length; ++d) {
 	    	System.out.println("\f Day:" + (d + 1));
 	        for( s = 0; s < working[d].length; ++s) {
-	          System.out.printf("%-40s\t", working[d][s]);
+	          System.out.printf("%-50s\t", working[d][s]);
 	        }
 	        System.out.println();
 	    } 
 	}
 	
 	public static Object addToTable(Object[][] table, String name) {
-		if (table[d][s] == null) {
+		if (table[d][s] != null) {
 			table[d][s] += "," + name;
 		} else {
 			table[d][s] = name;
