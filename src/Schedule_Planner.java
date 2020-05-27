@@ -81,29 +81,28 @@ public class Schedule_Planner {
 		ArrayList<String> working_day = new ArrayList<String>();
 		ArrayList<String> working_noon = new ArrayList<String>();
 		ArrayList<String> working_night = new ArrayList<String>();
-		
 
 		for (d = 0; d < num_days; d++) {
 			workclone = (HashMap<Integer,String>) workers.clone();
 			for (s = 0; s < num_shifts; s++) {				
-				if (s == 0 && day_shift > 1) {
-					for (i = 0; i < day_shift; i++) {
-						working[d][s] += "," + workclone.get(w);
+				if (s == 0) {
+					for (i = 0; i <= day_shift; i++) {
+						working[d][s] += " " + workclone.get(w);
 						workclone.remove(w);
 						w++;
 						if(w == workclone.size())  w=0;
 					}
 				//	working[d][s] = working_day;
-				} else if (s == 1 && noon_shift > 1) {
-					for (i = 0; i < noon_shift; i++) {
-						working[d][s] += "," + workclone.get(w);
+				} else if (s == 1) {
+					for (i = 0; i <= noon_shift; i++) {
+						working[d][s] += " " + workclone.get(w);
 						workclone.remove(w);
 						w++;
 						if(w == workclone.size())  w=0;
 					}
-				} else if (s == 2 && night_shift > 1) {
-					for (i = 0; i < night_shift; i++) {
-						working[d][s] += "," + workclone.get(w);
+				} else if (s == 2) {
+					for (i = 0; i <= night_shift; i++) {
+						working[d][s] += " " + workclone.get(w);
 						workclone.remove(w);
 						w++;
 						if(w == workclone.size())  w=0;		
